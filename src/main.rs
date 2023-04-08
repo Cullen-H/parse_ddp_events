@@ -13,7 +13,7 @@ fn main() -> std::io::Result<()> {
         *map.entry(json["event_type"].to_string().to_owned()).or_default() += 1;
     }
 
-    let events_file = File::create("output.json").unwrap();
+    let events_file = File::create("output/output.json").unwrap();
 
     serde_json::to_writer(events_file, &map).unwrap();
 
